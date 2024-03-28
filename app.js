@@ -6,9 +6,10 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var blanketsRouter = require('./routes/blankets'); 
+var blanketsRouter = require('./routes/blankets'); //groceries endpoint added
 var gridRouter = require('./routes/grid'); //grid endpoint added
-var pickRouter = require('./routes/pick');
+var pickRouter = require('./routes/pick');//pick endpoint added
+
 
 var app = express();
 
@@ -24,9 +25,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/blankets', blanketsRouter);
+app.use('/blankets', blanketsRouter); 
 app.use('/grid', gridRouter); //grid endpoint added
-app.use('/pick', pickRouter);
+app.use('/pick', pickRouter); //pick endpoint added
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
